@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<!-- É chamado antes de carregar a página -->
+<head>
+	<meta charset="UTF-8">
+	<!-- Essa linha serve para dispositivos móveis -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- serve para navegadores antigos --> 
+	<!-- No final ele ainda diz que faça rodar o ie(internet explore) como edge -->
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<!-- carregar o css -->
+	<!-- rel- quer dizer relation: o que você trouxer, coloque como estilo nessa página
+	 -->
+	<link rel="stylesheet" href="assets/css/style.css"/>
+
+	<!-- Pra chamar o javascritp usamos script. Ela é uma tag que precisa de fechamento o / 
+	nao usamos mais aqui no header porque isso faz com que fique lento
+	Tudo eh carregado primeiramente aqui no header
+	-->
+	<!-- <script src="/script.js"/> -->
+
+	<title>HCode Web Dev</title>
+</head>
+
+<body>
+	<!-- header, section, e footer podem ser posicionados em qualquer local -->
+
+	<header>
+
+		<!-- a vem de ancor, que manda a gente para algum local -->
+		<!-- href- hypertext references -->
+		<!-- Caminho para outra página html -->
+		<!-- que pode ser até uma página da web -->
+		<h1><a href="https://www.hcode.com.br">HCode</a></h1>
+		<!-- Barra de navegacao -->
+		<nav></nav>
+
+	</header>
+
+	<section class="content-center">
+
+		<!-- Podemos dividir, eh como um mini container -->
+		<div class="text-center">
+
+			<!-- target="_blank" tá dizendo para abrir em uma nova paǵina, o padrao é self, que abre na mesma página-->
+			<!-- lembrando que pra sair da pasta seria ../
+			 alt- vem de alternate,
+			 se a imgem nao for carregada-->
+			<a href="https://www.hcode.com.br"><img src="assets/images/hcode.png" alt="Logo HCode"></a>
+		</div>
+
+
+		<!-- Tudo que for ser enviado coloca dentro do form -->
+		<!-- Temos POST e GET (quem sabem outros tbm)
+		contudo o get mostra o conteudo na url
+		já o post não, usar get em coisas muito específicas -->
+		<form id="form-login" action="/login" method="POST">
+
+			<div>
+				<!-- placeholder eé a dica,  required quer dizer que ele é origatório-->
+				<input id="email" type="email" placeholder="Digite seu e-mail" required>
+			</div>
+
+			<div>
+				<input id="password" type="password" placeholder="Digite a senha" required>
+			</div>
+
+			<div>
+				<button id="btn-submit" >Enviar</button>
+			</div>
+
+		</form>
+
+	</section>
+
+	<!-- footer eh o dorape -->
+	<footer>
+		<p>HCode treinamentos</p>
+	</footer>
+
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

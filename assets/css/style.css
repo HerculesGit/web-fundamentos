@@ -1,0 +1,217 @@
+
+/*Seletor universal - Essa formatacao vai resolver um problema antigo de ficar
+calculando borda, padding, e coisas ficarem estourando*/
+*{
+	box-sizing: border-box;
+	/*faz se ajustar ao padding e nao fazar pra fora */
+
+	/*todos os elementos terao essa fonte*/
+	/*Estamos dizendo que carregue um, senao tiver carregue o outro, e no final dizendo que senao tiver nenhum
+	carregue qualquer outra que sem sem serifa*/
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: #F2F2F2;
+}
+
+.content-center {
+	/*100% é o máximo, podemos definir por pixels e muitos outros*/
+	width: 100%;
+	/*Apesar de colocar para ela ter 100%
+	queremos que ele chegue a um valor máximo, se a tela for de um dispositivel móvel
+	aí o 100 será interessante*/
+	max-width: 300px;
+	padding: 20px;
+	margin: auto; /*Calcular as margens automaticamente*/
+	/*overflow: hidden; /*tudo que tiver fora da caixa, ou seja, do tamanho, esconda*/
+	background-color: #FFF;
+	border-radius: 15%;
+
+}
+
+/*nesse caso estamos dizendo que os filhos, ou seja, os descendentes de content-center, no caso 'img'
+terao essa formatacao
+*/
+.content-center img {
+	width: 70%; /*Ficara 70% do container que ele tá dentro*/
+}
+
+
+/*Mesma coisa do de cima, a diferenca é que estamos dizendo que os descendentes de .content-center que tenham .text-center
+receberam as seguintes formatacoes*/
+.content-center .text-center {
+	text-align: center;
+}
+
+.content-center from {
+	margin: 20px;
+}
+
+.content-center input, .content-center button {
+	width: 100%;
+
+	/*top, right, bottom, left*/
+	/*modo abreviado top e bottom, right e left*/
+	/* Se colocar apenas 1 dles fica todos da mesma forma*/
+	padding: 10px, 5px;
+	border: none;  /* tira as bordar do input*/
+
+	outline: none; /*outline é uma corzinha que o navegador coloca quando 
+	estamos no campo, pra indicar foco, deixando em none agente tira*/
+
+	/*no android temos uma linha, é o estilo material design*/
+}
+
+/*Linha estilo material design*/
+.content-center input {
+	border-bottom-color: #CCC; /*uma corzinha*/
+	border-bottom-style: solid; /*deixa a bordar liza, podemos testar outros*/
+
+	/*ficou junto demais e vamos colocar uma */
+	margin-bottom: 10px;
+}
+
+/*quando focar no elemento input*/
+.content-center input:focus {
+	border-bottom-color: #D07335;
+}
+
+
+.content-center button {
+	background-color: #D07335;
+	/*Cor da letra*/
+	color: #FFF;
+}
+
+/*usando pseudo seletores, lembrando que o :hover tem que tá colado
+Estamos dizendo que quando passar o mouse por cima do botao*/
+.content-center button:hover {
+	background-color: #B55B28;
+	/*Virar uma maozinha-> pointer*/
+	cursor: pointer;
+}
+
+
+/*Quando clicar no botao*/
+.content-center button:active {
+	background-color: #C14E0E;
+}
+
+header a {
+	color: #666;
+	/*Sublinhado-> overline fica encima, none tira*/
+	text-decoration: none;
+}
+
+/*O navegador percebe quando visitamos o link e sobrescreve com as estilizacoes
+que colocarmos aqui*/
+header a:visited {
+	color: #000;
+}
+
+header a:hover {
+	/*Quando passar o mouse queremos que mostre que é um link colocando um sublinhado*/
+	text-decoration: underline;
+}
+
+header a:hover {
+	/*Quando passar o mouse queremos que mostre que é um link colocando um sublinhado*/
+	text-decoration: underline;
+}
+
+header a:focus {
+	color: red;
+}
+
+/*Se segurar no botao percebe essa cor, senao ela aparece rapidamente*/
+header a:active {
+	color: yellow;
+}
+
+header h1 {
+	/*podemos usar  em, px, e etc*/
+	/*em é uma medida relativa*/
+	/*1 é o tamanho padrao, acima dele é maior*/
+	/* Se colocarmos 2.5em pe mais que o dobro do padrao*/
+	font-size: 2.5em; 
+	text-align: center;
+	margin: 50px;
+}
+
+/*mexendo no rodape*/
+footer {
+	font-size: .8em;
+	text-align: center;
+}
+
+.content-tabuada {
+	width: 100%;
+	text-align: center;
+	max-width: 500px;
+	background-color: #FFF;
+	margin: auto;
+	padding: 20px; 
+}
+
+/*Aproveitar todo tamanho*/
+.content-tabuada table{
+	width: 100%;
+
+	/*muito legal, faz com quê fique colado, e nao um espaçamento entre os elementos*/
+	border-collapse: collapse;
+
+}
+
+.content-tabuada td{
+	padding: 10px; 
+
+}
+
+/*Colocando bordas nas td's*/
+.content-tabuada td{
+	padding: .75em;
+	border-top: 1px solid #DEE2E6
+}
+
+
+/*Estilo zebrado, ou seja, uma linha de uma cor mais forte e a outra de cor mais fraca*/
+/*esse nth-child(index_do_filho) tem a funcao te ir até o filho 3 ou 2, por exemplo, passando
+o indece dele 
+
+.content-tabuada tbody tr:nth-child(3){
+	
+}
+
+o problema é que se for assim só fica o 3º
+entao o css tem o odd, que é a ideia de par ou impar
+
+odd - par
+even - impar
+
+*/
+.content-tabuada tbody tr:nth-child(odd){
+	/*1 é sem transparencia*/
+	/*background-color: rgba(0,0,0, .05);*/
+	background-color: hsla(0, 100%, 50%, 0.3);
+}
+
+.content-tabuada tbody tr:nth-child(even){
+	background-color: hsla(0, 100%, 70%, 0.3);
+	border-color: rgba(0,0,0,0);
+}
+
+.content-tabuada tbody tr:hover {
+	background-color: rgba(0,0,0,.15);
+	cursor: pointer;
+}
+
+#valorA {
+	width: 100%;
+
+}
+
+#valorB {
+	width: 100%;
+
+}
