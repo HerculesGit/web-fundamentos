@@ -237,5 +237,25 @@ Ele está dizendo que o li que tiver o complete
 .todo li.complete {
 	text-decoration: line-through;
 	color: #222;
+	cursor: not-allowed;
 	/*background-color: #FFFFF3;*/
+}
+
+.todo button {
+	width: initial;
+	color: #FFF;
+	background-color: red;
+
+	/*Faz com que ele seja jogado lá pra direita do espaço*/
+	/*Como se fosse um Aligment.RIGHT do Java*/
+	float: right;
+
+	/*Tamanho mínimo que ele pode chegar*/
+	min-width: 30px;
+}
+
+/*para id é #*/
+#new-task {
+	width: 100%;
+	padding: 10px;
 }
